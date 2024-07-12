@@ -9,16 +9,16 @@ my_api = "r8_d7cwt5Eeubp26aNm9gUJnst12hxNmtL2P7ku3"
 with st.sidebar:
     st.title('🦙💬 Llama 2 Chatbot')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
-    if my_api in st.secrets:
+    if "my_api" in st.secrets:
         st.success('API key already provided!', icon='✅')
-        replicate_api = st.secrets[my_api]
+        replicate_api = st.secrets["my_api"]
     else:
         replicate_api = st.text_input('Enter Replicate API token:', type='password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
-    os.environ[my_api] = replicate_api
+    os.environ["my_api"] = replicate_api
 
     st.subheader('Models and parameters')
     selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-7B', 'Llama2-13B'], key='selected_model')
