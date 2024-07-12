@@ -21,7 +21,7 @@ with st.sidebar:
     max_length = 128
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "This is Blog BLAST !!!! How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "This is Blog BLAST's !!!! How may I assist you today?"}]
 
 # Display or clear chat messages
 for message in st.session_state.messages:
